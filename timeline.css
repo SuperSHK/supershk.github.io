@@ -1,0 +1,93 @@
+.main-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 75px;
+	background: #303030;
+}
+
+.main-header #headerTitle {
+	width: 100%;
+	color: #FFFFFF;
+	font-size: 2em;
+	text-align: left;
+	vertical-align: middle;
+	text-indent: 10px;
+}
+
+#search {
+	float: right;
+	position: fixed;
+	width: 200px;
+	top: 25px;
+	right: 0;
+	font-size: 11px;
+	color: black;
+	z-index: 1 !important;
+}		
+
+#popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+}
+
+#popup p {
+	position: absolute;
+	top: -100px;
+	left: -150px;
+	background: #fff;
+	width: 300px;
+	height: 200px;
+}
+
+#popup .inner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+main {
+	margin-top: 100px;
+}
+
+.left-sidebar {
+	float: left;
+	position: fixed;
+	height: 100%;
+}
+
+.left-sidebar #listStyle {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+#listAppearance {
+	list-style-type: none;
+	line-height: 300%;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 0.9em;
+	margin-left: 30px;
+	color: #404040;
+}
+
+#content {
+	float: right;
+	height: 100%;
+	margin-left: 120px;
+	margin-top: 0px;
+}
+
+#imageLayout {
+	list-style-type: none;
+}
+
+#imagePlace {
+	float: left;
+}

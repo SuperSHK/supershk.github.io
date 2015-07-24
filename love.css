@@ -4,7 +4,7 @@ body {
 .fave {
   width: 70px;
   height: 50px;
-  background: url("liked animation.svg") no-repeat;
+  background: url("love.svg") no-repeat;
   background-position: 0 0;
 }
 

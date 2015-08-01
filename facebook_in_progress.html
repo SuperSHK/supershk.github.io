@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Facebook Layout</title>
+	<style>
+	
+	.main-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 42px;
+		background: #3b5998;
+	}
+
+	#search {
+		float: left;
+		position: fixed;
+		width: 395px;
+		height: 21px;
+		left: 45px;
+		font-size: 11px;
+		color: black;
+		border: none;
+		box-shadow: none;
+	}		
+
+	#search #searchBox {
+		float: left;
+		position: fixed;
+		width: 395px;
+		height: 20px;
+		top: 7.5px;
+		left: 45px;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-color: #d8dfea;
+		font-style: lighter;
+		font-variant: normal;
+		font-weight: 100;
+		line-height: 15px;
+		text-indent: 5px;
+	}
+
+	#search #searchSubmitButton {
+		float: left;
+		position: fixed;
+		top: 10px;
+		left: 450px;
+	}
+	.main-header #headerLogo{
+		position: fixed;
+		top: 7px;
+		left: 0;
+		text-align: left;
+		padding-left: 7px;
+		z-index: 1 !important;
+	}
+	body {
+		background-color: #f7f7f7;
+	}
+	main {
+		margin-top: 42px;
+	}
+
+	.globalContainer {
+		height: 100px;
+		width: 100%;
+		padding: 10px 0;
+	}
+	.globalContainer .left-sidebar {
+		float: left;
+		height: 100%;
+		width: 20%;
+	}
+
+	.globalContainer #content {
+		float: left;
+		height: 100%;
+		width: 50%;
+	}
+
+	.globalContainer #right-banner {
+		float: left;
+		height: 100%;
+		width: 30%;
+	}
+
+	.left-sidebar #listStyle {
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	#listAppearance {
+		list-style-type: none;
+		line-height: 300%;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 0.9em;
+		margin-left: 10px;
+		color: #404040;
+	}
+
+	.ownerTable {
+		display: table;
+		text-align: left;
+		width: 120px;
+	}
+
+	.ownerRow {
+		display: table-row;
+	}
+
+	.ownerPhoto {
+		display: table-cell;
+		text-align: left;
+		width: 60px;
+	}
+
+	.ownerName {
+		display: table-cell;
+		text-align: left;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 3px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+	}
+
+	.editProfile {
+		display: table-row;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 2px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+	}
+
+	#content {
+		margin-left: 5px;
+		margin-top: 0px;
+	}
+
+	#first {
+		height: 120px;
+		width: 80%;
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+	}
+
+	#second {
+		height: 280px;
+		width: 80%;
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+		margin-top: 15px;
+	}
+	
+	#third {
+		height: 200px;
+		width: 80%;
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+		margin-top: 15px;
+	}
+
+	#right-banner {
+		margin-left: 5px;
+		margin-top: 0px;
+	}
+
+	#right-banner #firstBanner {
+		height: 800px;
+		width: 80%;
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+	}
+
+	#right-banner #secondBanner {
+		height: 200px;
+		width: 80%;
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+		margin-top: 15px;
+	}
+
+	</style>
+</head>
+<body>
+	<header>
+		<table class="main-header" title="main-header">
+			<tbody class="headerLogoContainer">
+				<tr>
+					<th>
+						<a id="headerLogo" href="http://s288.photobucket.com/user/superunicorn1/media/fb_white_logo_slice2_zps5fdr5ads.png.html" target="_blank"><img src="http://i288.photobucket.com/albums/ll199/superunicorn1/fb_white_logo_slice2_zps5fdr5ads.png" border="0" alt="fb_logo_white_slice2 photo fb_white_logo_slice2_zps5fdr5ads.png" height="5%" width="5%"></a>	
+					</th>
+				</tr>
+			</tbody>
+		</table>
+		<form id="search">
+			<input id="searchBox" type="text" name="textSearch" id="textSearch" placeholder="Search Facebook">
+			<input id="searchSubmitButton" type="submit" name="submitSearch" value="검색">
+		</form>
+	</header>
+	<main>
+		<div class="mainPage">
+			<div class="globalContainer">
+				<section class="left-sidebar">
+					<div class="ownerTable">
+						<div class="ownerRow">
+							<div class="ownerPhoto">
+								<a href="http://s288.photobucket.com/user/superunicorn1/media/fb_profile_image_zps31pnjqhg.jpg.html" target="_blank"><img src="http://i288.photobucket.com/albums/ll199/superunicorn1/fb_profile_image_zps31pnjqhg.jpg" border="0" alt=" photo fb_profile_image_zps31pnjqhg.jpg" height="5%" width="5%"></a>
+							</div>
+							<div class="ownerName">
+								김성한
+							</div>
+						</div>
+						<div class="ownerRow">
+							<div class="editProfile">
+								Edit Profile
+							</div>
+					</div>
+					<div>
+					<ul id="listStyle">
+						<li id="listAppearance">
+							즐겨찾기
+						</li>
+						<li id="listAppearance">
+							그룹
+						</li>
+						<li id="listAppearance">
+							모바일앱
+						</li>
+					</ul>
+					</div>
+				</section>
+				<section id="content">
+					<div id="first">
+					</div>
+					<div id="second">
+					</div>
+					<div id="third">
+					</div>
+				</section>
+				<section id="right-banner">
+					<div id="firstBanner">
+					</div>
+					<div id="secondBanner">
+					</div>
+						
+			</div>
+		</div>
+	</main>
+</body>
+</html>

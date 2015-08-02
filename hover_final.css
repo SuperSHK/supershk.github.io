@@ -1,0 +1,131 @@
+
+	#header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 150px;
+		background: #1F3263;
+	}
+	#title {
+		color: #D8B17E;
+		text-align: left;
+		padding: 10px;
+		position: fixed;
+		left: 100px;
+		top: 65px;
+		/* height: 8px;
+		border-right-style: solid;
+		border-right-width: 1px;
+		border-right-color: #E1D4C6;
+		border...
+		*/
+	}
+	#sub-header {
+		position: fixed;
+		top: 150px;
+		left: 0;
+		width: 100%;
+		height: 40px;
+		background: #E9E6DF;
+	}
+
+	#date {
+		position: fixed;
+		left: 100px;
+		padding: 10px;
+		text-align: left;
+		vertical-align: middle;
+		color: #0D2C4C;
+	}
+	#author {
+		color: #E1D4C6;
+		text-align: left;
+		padding: 10px;
+		position: fixed;
+		left: 264px;
+		top: 65px;
+		font-weight: lighter;
+	}
+
+	#container {
+		position: relative;
+		top: 230px;
+		left: 100px;
+	}
+
+	#dropdown {
+		float: left;
+		z-index: 2;
+	}
+
+	#text {
+		padding-left: 10px;
+	}
+
+	#paragraph {
+		z-index: -999;
+		position: absolute;
+	}
+
+	#set {
+		background-color: #0D2C4C;
+		color: white;
+		width: 170px;
+		height: 20px;
+		text-align: center;
+		vertical-align: middle;
+		border-radius: 5px;
+		border-top: #D5D1CF;
+		border-bottom: #D5D1CF;
+		border-left: #D5D1CF;
+		border-right: #D5D1CF;
+	}
+
+	#set:hover {
+		background-color: #FD273D;
+		color: white;
+		cursor: pointer; cursor: hand;
+		border-radius: 5px 5px 0 0;
+		font-weight: 800px;
+	}
+
+	ul {
+		display: none;
+		list-style: none;
+		text-align: left;
+		width: auto;
+		background-color: #E9C186;
+		border-radius: 0 0 5px 5px;
+		z-index: 3;
+		opacity: 1;
+	}
+
+	li {
+		text-align: left;
+	}
+
+	#set:hover ul {
+		display: block;
+		margin-top: -0.00001em;
+		text-decoration: none;
+		background: #0D2C4C;
+		color: #FFFFFF;
+		border-top-style: solid;
+		border-top-color: #D5D1CF;
+		border-radius: 0 0 3px 3px;
+		padding: 0.1em 0.1em;
+	}
+
+	#set:hover ul:hover li {
+		display: block;
+	}
+
+	#set:hover ul:hover li:hover {
+		display: block;
+		position: relative;
+		width: 100%;
+		background-color: #EBDDCB;
+		color: #0D2C4C;
+		font-weight: 800;
+	}

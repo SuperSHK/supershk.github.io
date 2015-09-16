@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>readyState & DOMContentLoaded</title>
+	<link rel="stylesheet" href="readyDOM.css" type="text/css"></link>
+</head>
+<body>
+	<header id="header">
+		<h1 id="title">readyState & DOMContentLoaded</h1>
+		<h1 id="author">|  김성한</h1>
+	</header>
+	<main>
+		<table id="sub-header">
+			<tbody>
+				<tr>
+					<th id="date">2015.08.24</th>
+				</tr>
+			</tbody>
+		</table>
+		<content id="content">
+		<section id="readyState">
+			<h2 id="readyStateHeader">readyState</h2>
+		</section>
+			<div>
+				<p class="readyState" id="readyState" onloading="return ready()">
+					alert ("readyState: " + document.readyState)
+				</p>
+				<button name="readyState" class="readyState" id="readyState" onclick="return ready()">Check Again</button>
+			</div>
+
+		<section id="domContent">
+			<h2 id="domContentHeader">DOMContentLoaded</h2>
+		</section>
+			<div>
+				<p class="domContent" id="domContent">
+					document.addEventListener("DOMContentLoaded", function(event)...
+				</p>
+				<p class="domContentInfo">
+					check out the browser's console for the status.
+				</p>
+				
+				<button name="domContent" class="domContent" id="domContent" onclick="domCheck">Check Status</button>
+			</div>
+			<img id="testPhoto" src="http://lorempixel.com/400/200"></img>
+		<section id="winLoad">
+			<h2 id="winLoadHeader">Window Loading Event</h2>
+		</section>
+			<div>
+				<p class="winLoad" id="winLoad">
+					window.addEventListener("Load", function(event)...
+				</p>
+				<p class="winLoadInfo">
+					check out the browser's console for the status.
+				</p>
+				<button name="winLoad" class="winLoad" id="winLoad" onclick="loadCheck">Check Status</button>
+			</div>
+			
+		</content>
+	</main>
+
+	<script type = "text/javascript">
+
+		console.log("readystate : "+document.readyState); 
+
+		alert ("readyState: " + document.readyState);
+	    function ready() 
+	    {
+	        alert ("readyState: " + document.readyState);
+	    };
+	
+		document.addEventListener("DOMContentLoaded", function(event) {
+    		console.log("DOM fully loaded and parsed");
+  			});
+
+		window.addEventListener("Load", function(event) {
+    		console.log("Loaded");
+  			});
+
+		function domCheck()
+		{
+			document.addEventListener("DOMContentLoaded", function(event) {
+    		alert ("DOM fully loaded and parsed");
+  			});
+		}
+		function loadCheck(){
+			window.onload = function(){
+			console.log("Loaded");
+			alert ("Loaded");
+			};
+		}
+		window.onload = function(){
+			console.log("Loaded");
+			alert ("Loaded");
+		};
+
+
+	</script>
+
+</body>
+</html>

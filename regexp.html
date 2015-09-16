@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Regular Expressions</title>
+	<link rel="stylesheet" href="regexp.css" type="text/css"></link>
+</head>
+<body>
+	<header id="header">
+		<h1 id="title">Regular Expression in JavaScript</h1>
+		<h1 id="author">|  김성한</h1>
+	</header>
+	<main>
+		<table id="sub-header">
+			<tbody>
+				<tr>
+					<th id="date">2015.08.24</th>
+				</tr>
+			</tbody>
+		</table>
+		<content id="content">
+		<section id="numCheck">
+			<h2 id="numCheckHeader">Numeric Input Only</h2>
+		</section>
+			<div>
+				<form name = "numCheck" action="http://taegon.kim/form.php" method="POST" onsubmit="return numValidate()">
+					<label for="num">Input Number:</label>
+					<input type="text" name="num" id="num" placeholder="Please enter a numeric value" minlength="1" maxlength="30" size="30" title="Please remember enter only a digit value. No alphabets are allowed" required>
+					<input type="submit" value="submit">
+				</form>
+			</div>
+		<section id="phoneCheck">
+			<h2 id="phoneCheckHeader">Phone Number Check</h2>
+		</section>
+			<div>
+				<form name = "phoneCheck" action="http://taegon.kim/form.php" method="POST" onsubmit="return phoneValidate()">
+					<label for="phone">Input Number:</label>
+					<input type="text" name="phone" id="phone" placeholder="Cell phone number" minlength="9" maxlength="30" size="30" title="Please remember to affix the first 3 digits of your mobile phone number" required>
+					<input type="submit" value="submit">
+				</form>
+			</div>
+		<section id="urlCheck">
+			<h2 id="urlCheckHeader">URL Validation</h2>
+		</section>
+			<div>
+				<form name = "urlCheck" action="http://taegon.kim/form.php" method="POST" onsubmit="return urlValidate()">
+					<label for="url">Input Number:</label>
+					<input type="text" name="url" class="url" id="url" placeholder="Enter a valid URL" minlength="1" maxlength="50" size="30" title="Please enter a valid URL" required>
+					<input type="submit" value="submit">
+				</form>
+			</div>
+
+		</content>
+	</main>
+
+	<script type = "text/javascript">
+
+	console.log("readystate : "+document.readyState); 
+
+	function numValidate()
+	{
+		var input = document.getElementById("num").value;
+		var regexp = /^[0-9]+$/;
+		if (regexp.test(input) == false)
+		{
+			alert("Must input numeric values only");
+			return false;
+		}
+
+		if (regexp.test(input) == true)
+		{
+			alert("Validation Successful");
+			return 0;
+		}
+	
+	}
+
+	function phoneValidate()
+	{
+		var input2 = document.getElementById("phone").value;
+		var regexp2 = /^01[016789][)-]?[0-9]{3,4}[-]?[0-9]{4}$/;
+		if (regexp2.test(input2) == false)
+		{
+			alert("That is an invalid cell phone number");
+			return false;
+		}
+
+		if (regexp2.test(input2) == true)
+		{
+			alert("Validation Successful");
+			return 0;
+		}
+	}
+
+	function urlValidate()
+	{
+		var input3 = document.getElementById("url").value.toString();
+		var regexp3 = /(((http)?:\/\/)?(www\.)?(([0-9a-zA-Z)+)\.{1}([a-z]{2,3}))\.{1}([a-z]{2,3})(\/.*)?)$/;
+		if (regexp3.test(input3) == false)
+		{
+			alert("That is an invalid URL");
+			return false;
+		}
+
+		if (regexp3.test(input3) == true)
+		{
+			alert("Validation Successful" + "\n\n" + RegExp.$1);
+			return 0;
+		}
+	}
+	</script>
+
+</body>
+</html>

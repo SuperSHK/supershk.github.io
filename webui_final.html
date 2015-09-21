@@ -1,0 +1,334 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Web UI Basic Final_김성한</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="webui_final_3.css" type="text/css"></link>
+</head>
+<body>
+	<header id="mainHeader">
+		<table class="main-header" title="main-header">
+			<tbody class="headerLogoContainer">
+				<tr class="headerLogoBox">
+					<th id="headerButton1">
+						<div id="homeContainer">
+						<i id="homeLogo" class="fa fa-home"></i>
+						<span id="headerText">Home</span>
+						</div>
+					</th>
+					<th id="headerButtons">
+						<i id="notiLogo" class="fa fa-bell"></i>
+						<span id="headerText">Notifications</span>
+					</th>
+					<th id="headerButtons">
+						<i id="messageLogo" class="fa fa-envelope"></i>
+						<span id="headerText">Messages</span>
+					</th>
+					<th id="twitterLogo">
+						<i class="fa fa-twitter"></i>
+					</th>
+				</tr>
+			</tbody>
+		</table>
+	</header>
+	<main>
+		<div class="mainPage">
+			<div class="globalContainer">
+				<section class="left-sidebar">
+					<div class="ownerInfoContainer">
+						<div id="ownerInfo">
+							<div id="ownerInfoBack"></div>	
+								<div class="ownerPhoto">
+									<img id="ownerPhoto" src="http://i288.photobucket.com/albums/ll199/superunicorn1/fb_profile_image_zps31pnjqhg.jpg"/>
+								</div>
+							<div id="ownerName">
+								<p id="realName">
+									Kim Sung Han
+								</p>
+								<p id="screenName">
+									@skim1
+								</p>
+							</div>
+							<table class="stats" title="stats">
+								<tbody class="statContainer">
+									<tr class="statBox">
+										<th id="statArray1">
+											<p id="statHeader">
+												TWEETS
+											</p>
+											<p id="statData">
+												423
+											</p>
+										</th>
+										<th id="statArray2">
+											<p id="statHeader">
+												FOLLOWING
+											</p>
+											<p id="statData">
+												27
+											</p>
+										</th>
+										<th id="statArray3">
+											<p id="statHeader">
+												FOLLOWERS
+											</p>
+											<p id="statData">
+												415
+											</p>
+										</th>
+									</tr>
+								</tbody>
+							</table>	
+						</div>
+					</div>
+				</section>
+				<section id="content">
+					<form action="api.taegon.kim" method="POST /posts">
+					<div id="textBox">
+						<!--<textarea id="textarea" rows="1" cols="10" onKeyPress="return taLimit(this)" onKeyUp="return taCount(this,'myCounter')" name="Description">
+						</textarea>-->
+						<textarea id="textarea" onKeyPress="return taLimit(this)" onKeyUp="return taCount(this,'myCounter')" name="Description" rows=7 wrap="physical" cols=40 placeholder="하...">
+						</textarea>
+							<br><br>
+							<b><span id="myCounter">300</span></b> 
+							<div>
+							<span>
+								<!--<span id="charCount">0</span>-->
+							</span>
+							<span>
+								<input type="submit" id="tweetButton" name="Tweet" value="Tweet"></input>
+							</span>
+						</div>
+					</div>
+					<div id="postBoxContainer">
+						<div id="postBox">
+							<div class="postBoxCount">
+								<a>
+							
+									<div>
+										<img id="posterPhoto" src="http://i288.photobucket.com/albums/ll199/superunicorn1/fb_profile_image_zps31pnjqhg.jpg"/>
+										<span id="posterInfo">
+											<span id="posterName">Kim Sung Han</span>
+											<span id="posterDate">1h</span>
+										</span>
+										<div>
+											<p id="postContent">
+												넥스트 들어온지 12주째. 이 시험 너무 어렵다.
+											</p>
+											<p id="postContent">
+												댓글 아이콘 클릭하면 favorite이 증가한다. 이상하다.
+											</p>
+										</div>
+									<div>
+										<span>
+											
+											<span id="likeCount" class="likeCount" input class="clickCount" size="3" onfocus="this.blur();" value="0">
+											</span>
+											<!--<span class="likeCount" data-bind = 'text: numberOfClicks'>&nbsp;</span>-->
+											 Favorites
+											 <!--<a id = "likeClicks">0</a> -->
+											 <!--<input class="likeCount" value = "0" /> -->
+										</span>
+										<span class="commentCountText">
+											<span id = "button-count" class="commentCount" input class="clickCount" size="3" onfocus="this.blur();" value="0"></span>
+											 Comments
+										</span>
+										<span class="shareCountText">
+											<span id="button-count" class="shareCount" input class="clickCount" size="3" onfocus="this.blur();" value="0"></span>
+											 Shares
+										</span>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="postBoxButtons">
+							<span class="likeButton">
+								<a class="likeButton1">
+									<i id = "likeButton" class="fa fa-reply" data-bind="click: registerClick, disable: hasClickedTooManyTimes">
+									</i>
+									<span class="likeButtonText">
+										<span id="likeCount" class="likeCount" input class="clickCount" size="3" onfocus="this.blur();" value="0">
+										</span>
+									</span>
+								</a>
+							</span>
+							<span class="commentButton">
+								<a class="commentButton1">
+									<i id = "commentButton" class="fa fa-retweet" data-bind="click: registerClick, disable: hasClickedTooManyTimes"></i>
+									</i>
+									<span class="commentButtonText">
+										
+									</span>
+								</a>
+							</span>
+							<span class="shareButton">
+								<a class="shareButton1">
+									<i id = "shareButton" class="fa fa-star" data-bind="click: registerClick, disable: hasClickedTooManyTimes"></i>
+									</i>
+									<span class="likeButtonText">
+										<span id="likeCount" class="likeCount" input class="clickCount" size="3" onfocus="this.blur();" value="0">
+											</span>
+									</span>
+								</a>
+							</span>	
+						</div>			
+					</div>
+					<div id="postBox">
+					</div>
+					<div id="postBox">
+					</div>
+				</section>
+						
+			</div>
+		</div>
+	</main>
+	<script type="text/javascript">
+
+
+	document.addEventListener("scroll", function (event)
+	{
+		checkForNewDiv();
+	});
+
+	var checkForNewDiv = function() 
+	{
+		var lastDiv = document.querySelector("#content > div:last-child");
+		var lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight;
+		var pageOffset = window.pageYOffset + window.innerHeight;
+
+		if(pageOffset > lastDivOffset - 10)
+		{
+			var newDiv = document.createElement("div");
+			
+
+			newDiv.innerHTML = "<div style='height: 150px;width: 590px;;background-color: white;border-top: #e5e6e9;border-bottom: #d0d1d5;border-left: #dfe0e4;border-right: #dfe0e4;border-radius: 3px;border-bottom-width: thin;border-bottom-style: solid;border-right-width: thin;border-right-style: solid;border-left-width: thin;border-left-style: solid;border-top-width: thin;border-top-style: solid;margin-top: 15px;' id=postBox2>";
+			document.getElementById("content").appendChild(newDiv);
+			checkForNewDiv();
+		}
+	};
+
+
+	var likeButton = document.getElementById("likeButton");
+
+	var likeCounter = document.getElementById("likeCount");
+
+	likeCounter.innerHTML = 0;
+
+	likeButton.onclick = function()
+	{
+		likeCounter.innerHTML++;
+	}
+
+/*
+	var commentButton = document.getElementById("commentButton");
+
+	var commentCounter = document.getElementById("commentCount");
+
+	commentCounter.innerHTML = 0;
+
+	commentButton.onclick = function()
+	{
+		commentCounter.innerHTML++;
+	}
+	
+
+	var shareButton = document.getElementById("likeButton");
+
+	var shareCounter = document.getElementById("likeCount");
+
+	likeCounter.innerHTML = 0;
+
+	likeButton.onclick = function()
+	{
+		likeCounter.innerHTML++;
+	}
+*/
+
+
+	var ta = document.getElementById("textarea");
+	ta.onfocus = function() {
+		this.style.height = "100px";
+	};
+
+	var ta = document.getElementById("textBox");
+	ta.onfocus = function() {
+		this.style.height = "150px";
+	};
+
+	var under = document.getElementById("headerButtons");
+	under.onfocus = function() {
+		document.getElementById("headerButton1").style.border = "none";
+	};
+
+	$("textBox").click(function(event) {event.preventDefault();
+                $("textBox").slideToggle();
+                });
+
+
+
+
+	maxL=300;
+	var bName = navigator.appName;
+	function taLimit(taObj) {
+		if (taObj.value.length==maxL) return false;
+		return true;
+	}
+
+	function taCount(taObj,Cnt) { 
+		objCnt=createObject(Cnt);
+		objVal=taObj.value;
+		if (objVal.length>maxL) objVal=objVal.substring(0,maxL);
+		if (objCnt) {
+			if(bName == "Netscape"){	
+				objCnt.textContent=maxL-objVal.length;}
+			else{objCnt.innerText=maxL-objVal.length;}
+		}
+		return true;
+	}
+	function createObject(objId) {
+		if (document.getElementById) return document.getElementById(objId);
+		else if (document.layers) return eval("document." + objId);
+		else if (document.all) return eval("document.all." + objId);
+		else return eval("document." + objId);
+	}
+
+
+
+
+	counter = function() {
+    var value = $('#textarea').val();
+
+    if (value.length == 0) {
+        $('#wordCount').html(0);
+        $('#totalChars').html(0);
+        $('#charCount').html(0);
+        $('#charCountNoSpace').html(0);
+        return;
+    }
+
+    var regex = /\s+/gi;
+    var wordCount = value.trim().replace(regex, ' ').split(' ').length;
+    var totalChars = value.length;
+    var charCount = value.trim().length;
+    var charCountNoSpace = value.replace(regex, '').length;
+
+    $('#wordCount').html(wordCount);
+    $('#totalChars').html(totalChars);
+    $('#charCount').html(charCount);
+    $('#charCountNoSpace').html(charCountNoSpace);
+	};
+
+	$(document).ready(function() {
+	    $('#count').click(counter);
+	    $('#textarea').change(counter);
+	    $('#textarea').keydown(counter);
+	    $('#textarea').keypress(counter);
+	    $('#textarea').keyup(counter);
+	    $('#textarea').blur(counter);
+	    $('#textarea').focus(counter);
+	});
+
+	</script>
+</body>
+</html>

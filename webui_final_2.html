@@ -1,0 +1,701 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Web UI Basic Final_김성한</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<style>
+
+	header {
+		z-index: 999;
+	}
+	.main-header {
+		float: left;
+		position: fixed;
+		clear: left;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 46px;
+		background: white;
+		border-bottom-color: #cacaca;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		border-color: #cacaca;
+		margin: auto;
+		text-align: center;
+	}
+
+	.headerLogoContainer{
+		margin: auto;
+		text-align: center;
+		width: 900px;
+		
+	}
+
+	#headerButton1 {
+		color: #777777;
+		float: left;
+		margin-top: 11px;
+		width: 100px;
+	}
+
+	#headerButtons {
+		color: #777777;
+		float: left;
+		margin-top: 11px;
+		width: 100px;
+	}
+
+	#headerText {
+		color: #777777;
+		font-weight: 500;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		font-color: #d8dfea;
+		font-variant: normal;
+		font-weight: 800;
+		text-indent: 5px;
+	}
+
+	#twitterLogo {
+		color: #55acee;
+		float: left;
+		position: fixed;
+		width: 55%;
+		margin-left: 250px;
+		margin-top: 11px;
+		font-size: 20px;
+	}
+
+	#headerLogo {
+		float: left;
+		position: fixed;
+		width: 20%;
+		color: #55acee;
+		font-size: 20px;
+		font-color: #d8dfea;
+		text-align: center;
+		vertical-align: auto;
+		margin: auto;
+	}
+
+	#headerButton1 {
+		border-bottom-color: #0084B4;
+		border-bottom-width: 4px;
+		border-bottom-style: solid;
+		background-color: white;
+	}
+
+	#headerButtons:hover {
+		display: block;
+		border-bottom-color: #0084B4;
+		border-bottom-width: 4px;
+		border-bottom-style: solid;
+		background-color: white;
+	}
+
+	#headerButtons:hover #headerButton1 {
+		display: block;
+		border-bottom-color: white;
+		border-bottom-width: 4px;
+		border-bottom-style: solid;
+	}
+
+	body {
+		background-color: white;
+	}
+
+	main {
+		margin-top: 42px;
+	}
+
+
+	.globalContainer {
+		height: 100px;
+		width: 900px;
+		padding: 10px;
+		text-align: center;
+		margin: auto;
+
+	}
+
+	.globalContainer .left-sidebar {
+		float: left;
+		height: 100%;
+		width: 35%;
+	}
+
+	.globalContainer #content {
+		float: left;
+		height: 100%;
+		width: 60%;
+	}
+
+	#ownerInfo {
+		height: 200px;
+		width: 290px;
+		position: relative;
+		background-color: #55acee;
+		border-top: #e5e6e9;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 5px 5px 5px 5px;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+		margin-top: 15px;
+		z-index: -10;
+	}
+
+	#ownerInfo #ownerInfoBack {
+		background-color: white;
+		height: 110px;
+		position: absolute;
+		top: 90px;
+		width: 290px;
+		border-bottom: #d0d1d5;
+		border-radius: 0px 0px 5px 5px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+	}
+
+	#ownerInfo .ownerPhoto {
+		position: absolute;
+		top: 60px;
+		left: 12px;
+		border-width: 10px;
+		border-top: white;
+		border-left: white;
+		border-right: white;
+		border-bottom: white;
+		border-top-width: thick;
+		border-top-style: solid;
+		border-left-width: thick;
+		border-left-style: solid;
+		border-right-width: thick;
+		border-right-style: solid;
+		border-bottom-width: thick;
+		border-bottom-style: solid;
+		border-radius: 5px;
+		background-color: white;
+	}
+
+	.ownerPhoto img {
+		width: 72px;
+		height: 72px;
+		border-radius: 5px;
+	}
+
+	#ownerName {
+		position: absolute;
+		top: 92px;
+		left: 102px;
+	}
+
+	#realName {
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 15px;
+		font-style: bold;
+		font-variant: normal;
+		font-weight: 800;
+		text-align: left;
+		line-height: 2px;
+		color: #292f33;
+	}
+
+	#screenName {
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		font-style: lighter;
+		font-variant: normal;
+		font-weight: 600;
+		text-align: left;
+		line-height: 3px;
+		color: #66757f;
+	}
+
+	.stats {
+		position: absolute;
+		top: 140px;
+		left: 12px;
+		width: 90%;
+		line-height: 3px;
+	}
+
+	#statHeader {
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		font-style: bold;
+		font-variant: normal;
+		font-weight: 500;
+		text-align: left;
+		color: #ccd6dd;
+	}
+
+	#statData {
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 18px;
+		font-style: bold;
+		font-variant: normal;
+		font-weight: 900;
+		text-align: left;
+		color: #0084b4;
+	}
+
+	#statBox {
+		width: 99%;
+	}
+
+	#statArray1 {
+		width: 30%;
+	}
+
+	#statArray2 {
+		width: 33%;
+		left:-5px;
+	}
+
+	#statArray3 {
+		width: 36%;
+	}
+
+	#content {
+		margin-top: 0px;
+		width: 590px;
+	}
+
+	textarea {
+		text-align: left;
+		margin-top: 11px;
+		height: 35px;
+		width: 500px;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+
+		transition: all 0.5s ease;
+	}
+
+	#textBox {
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+		margin-top: 15px;
+		z-index: -10;
+		width: 590px;
+		height: 60px;
+		transition: all 0.5s ease;
+	}
+	
+	#textBox:focus {
+		height: 160px;
+	}
+	
+	textarea:focus {
+		height: 100px;
+	}
+	
+
+	#postBoxContainer {
+		margin-top: 100px;
+		z-index: -11;
+	}
+
+	#postBox {
+		height: 150px;
+		width: 590px;
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+		margin-top: 15px;
+	}
+
+	#postBox:hover {
+		background-color: #C0D4E6;
+	}
+
+	.postBoxCount {
+		width: 95%;
+		text-align: left;
+		top: 200px;
+		margin-top: 200px;
+		margin-left: 8px;
+		line-height: 16px;
+		font-weight: 500;
+		border-bottom: 1px solid rgb (229, 229, 229);
+		color: #C0C0C0;
+		
+	}
+
+	.commentCountText {
+		margin-left: 15px;
+	}
+
+	.shareCountText {
+		margin-left: 15px;
+	}
+
+	.postBoxDivider {
+		color: white;
+		background-color: white;
+		width: 97%;
+		margin-left: 5px;
+		height: 1px;
+	}
+
+	.postBoxButtons {
+		width: 95%;
+		margin-top: 10px;
+		margin-left: 8px;
+		padding-bottom: 8px;
+		line-height: 16px;
+		color: #C0C0C0;
+		text-align: left;
+		font-weight: lighter;
+	}
+
+	.commentButton {
+		margin-left: 18px;
+	}
+
+	.shareButton {
+		margin-left: 18px;
+	}
+
+	#test {
+		font-color: black;
+	}
+
+
+	#posterPhoto {
+		
+		float: left;
+		width: 32px;
+		height: 32px;
+		border-radius: 5px;
+	}
+
+	#posterInfo {
+		margin-top: 10px;
+	}
+
+	#posterDate {
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		font-style: lighter;
+		font-variant: normal;
+		font-weight: 300;
+		text-align: left;
+		color: #66757f;
+		
+		float: left;
+		margin-left: 5px;
+		vertical-align: top;
+
+	}
+	#posterName {
+		margin-left: 10px;
+		vertical-align: top;
+		float: left;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		font-style: lighter;
+		font-variant: normal;
+		font-weight: 600;
+		text-align: left;
+		color: #292f33;
+	}
+	#postContent {
+		margin-top: 20px;
+		margin-left: 0px;
+		position: relative;
+		clear: left;
+		margin-top: -5px;
+		margin-left: 42px;
+	}
+
+	#likeButton:hover {
+		color: #216599;
+		font-color: #216599;
+	}
+
+	#commentButton:hover {
+		color: #0EB9B3;
+		font-color: #0EB9B3;
+	}
+
+	#shareButton:hover {
+		color: #FFCF6A;
+		font-color: #FFCF6A;
+	}
+
+	</style>
+</head>
+<body>
+	<header id="mainHeader">
+		<table class="main-header" title="main-header">
+			<tbody class="headerLogoContainer">
+				<tr class="headerLogoBox">
+					<th id="headerButton1">
+						<div id="homeContainer">
+						<i id="homeLogo" class="fa fa-home"></i>
+						<span id="headerText">Home</span>
+						</div>
+					</th>
+					<th id="headerButtons">
+						<i id="notiLogo" class="fa fa-bell"></i>
+						<span id="headerText">Notifications</span>
+					</th>
+					<th id="headerButtons">
+						<i id="messageLogo" class="fa fa-envelope"></i>
+						<span id="headerText">Messages</span>
+					</th>
+					<th id="twitterLogo">
+						<i class="fa fa-twitter"></i>
+					</th>
+				</tr>
+			</tbody>
+		</table>
+	</header>
+	<main>
+		<div class="mainPage">
+			<div class="globalContainer">
+				<section class="left-sidebar">
+					<div class="ownerInfoContainer">
+						<div id="ownerInfo">
+							<div id="ownerInfoBack"></div>	
+								<div class="ownerPhoto">
+									<img id="ownerPhoto" src="http://i288.photobucket.com/albums/ll199/superunicorn1/fb_profile_image_zps31pnjqhg.jpg"/>
+								</div>
+							<div id="ownerName">
+								<p id="realName">
+									Kim Sung Han
+								</p>
+								<p id="screenName">
+									@skim1
+								</p>
+							</div>
+							<table class="stats" title="stats">
+								<tbody class="statContainer">
+									<tr class="statBox">
+										<th id="statArray1">
+											<p id="statHeader">
+												TWEETS
+											</p>
+											<p id="statData">
+												423
+											</p>
+										</th>
+										<th id="statArray2">
+											<p id="statHeader">
+												FOLLOWING
+											</p>
+											<p id="statData">
+												27
+											</p>
+										</th>
+										<th id="statArray3">
+											<p id="statHeader">
+												FOLLOWERS
+											</p>
+											<p id="statData">
+												415
+											</p>
+										</th>
+									</tr>
+								</tbody>
+							</table>	
+						</div>
+					</div>
+				</section>
+				<section id="content">
+					<div id="textBox">
+						<textarea id="textarea" rows="1" cols="10">
+						</textarea>
+					</div>
+					<div id="postBoxContainer">
+						<div id="postBox">
+							<div class="postBoxCount">
+								<a>
+							
+									<div>
+										<img id="posterPhoto" src="http://i288.photobucket.com/albums/ll199/superunicorn1/fb_profile_image_zps31pnjqhg.jpg"/>
+										<span id="posterInfo">
+											<span id="posterName">Kim Sung Han</span>
+											<span id="posterDate">1h</span>
+										</span>
+										<div>
+											<p id="postContent">
+												넥스트 들어온지 12주째. 이 시험 너무 어렵다.
+											</p>
+										</div>
+									<div>
+										<span>
+											<span id="likeCount" class="likeCount" input class="clickCount" size="3" onfocus="this.blur();" value="0">
+											</span>
+											<!--<span class="likeCount" data-bind = 'text: numberOfClicks'>&nbsp;</span>-->
+											 Favorites
+											 <!--<a id = "likeClicks">0</a> -->
+											 <!--<input class="likeCount" value = "0" /> -->
+										</span>
+										<span class="commentCountText">
+											<span id = "button-count" class="commentCount" input class="clickCount" size="3" onfocus="this.blur();" value="0"></span>
+											 Comments
+										</span>
+										<span class="shareCountText">
+											<span id="button-count" class="shareCount" input class="clickCount" size="3" onfocus="this.blur();" value="0"></span>
+											 Shares
+										</span>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="postBoxButtons">
+							<span class="likeButton">
+								<a class="likeButton1">
+									<i id = "likeButton" class="fa fa-reply" data-bind="click: registerClick, disable: hasClickedTooManyTimes">
+									</i>
+									<span class="likeButtonText">
+										<span id="likeCount" class="likeCount" input class="clickCount" size="3" onfocus="this.blur();" value="0">
+										</span>
+									</span>
+								</a>
+							</span>
+							<span class="commentButton">
+								<a class="commentButton1">
+									<i id = "commentButton" class="fa fa-retweet" data-bind="click: registerClick, disable: hasClickedTooManyTimes"></i>
+									</i>
+									<span class="commentButtonText">
+										
+									</span>
+								</a>
+							</span>
+							<span class="shareButton">
+								<a class="shareButton1">
+									<i id = "shareButton" class="fa fa-star" data-bind="click: registerClick, disable: hasClickedTooManyTimes"></i>
+									</i>
+									<span class="shareButtonText">
+										
+									</span>
+								</a>
+							</span>	
+						</div>			
+					</div>
+					<div id="postBox">
+					</div>
+					<div id="postBox">
+					</div>
+				</section>
+						
+			</div>
+		</div>
+	</main>
+	<script type="text/javascript">
+
+
+	document.addEventListener("scroll", function (event)
+	{
+		checkForNewDiv();
+	});
+
+	var checkForNewDiv = function() 
+	{
+		var lastDiv = document.querySelector("#content > div:last-child");
+		var lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight;
+		var pageOffset = window.pageYOffset + window.innerHeight;
+
+		if(pageOffset > lastDivOffset - 10)
+		{
+			var newDiv = document.createElement("div");
+			
+
+			newDiv.innerHTML = "<div style='height: 280px;width: 590px;;background-color: white;border-top: #e5e6e9;border-bottom: #d0d1d5;border-left: #dfe0e4;border-right: #dfe0e4;border-radius: 3px;border-bottom-width: thin;border-bottom-style: solid;border-right-width: thin;border-right-style: solid;border-left-width: thin;border-left-style: solid;border-top-width: thin;border-top-style: solid;margin-top: 15px;' id=postBox2>";
+			document.getElementById("content").appendChild(newDiv);
+			checkForNewDiv();
+		}
+	};
+
+
+	var likeButton = document.getElementById("likeButton");
+
+	var likeCounter = document.getElementById("likeCount");
+
+	likeCounter.innerHTML = 0;
+
+	likeButton.onclick = function()
+	{
+		likeCounter.innerHTML++;
+	}
+
+	var commentButton = document.getElementById("commentButton");
+
+	var commentCounter = document.getElementById("commentCount");
+
+	commentCounter.innerHTML = 0;
+
+	commentButton.onclick = function()
+	{
+		commentCounter.innerHTML++;
+	}
+
+
+
+
+	var ta = document.getElementById("textarea");
+	ta.onfocus = function() {
+		this.style.height = "100px";
+	};
+
+	var ta = document.getElementById("textBox");
+	ta.onfocus = function() {
+		this.style.height = "150px";
+	};
+
+	var under = document.getElementById("headerButtons");
+	under.onfocus = function() {
+		document.getElementById("headerButton1").style.border = "none";
+	};
+
+	$("textBox").click(function(event) {event.preventDefault();
+                $("textBox").slideToggle();
+                });
+
+	</script>
+</body>
+</html>

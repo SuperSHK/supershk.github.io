@@ -1,0 +1,1068 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Facebook Layout</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<style>
+		.main-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 42px;
+		background: #3b5998;
+	}
+
+	#search {
+		float: left;
+		position: fixed;
+		width: 395px;
+		height: 21px;
+		margin-left: 10px;
+		font-size: 11px;
+		color: black;
+		border: none;
+		box-shadow: none;
+	}		
+
+	#search #searchBox {
+		float: left;
+		position: fixed;
+		width: 395px;
+		height: 26px;
+		top: 7.5px;
+		left: 45px;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-color: #d8dfea;
+		font-style: lighter;
+		font-variant: normal;
+		font-weight: 100;
+		text-indent: 5px;
+		border-radius: 3px;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+	}
+
+	#search #searchSubmitButton {
+		float: left;
+		position: fixed;
+		top: 10px;
+		left: 450px;
+	}
+	.main-header #headerLogo{
+		position: fixed;
+		top: 7px;
+		left: 0;
+		text-align: left;
+		padding-left: 7px;
+		z-index: 1 !important;
+	}
+
+	body {
+		background-color: #f7f7f7;
+	}
+
+	main {
+		margin-top: 42px;
+	}
+
+	.globalContainer {
+		height: 100px;
+		width: 100%;
+		padding: 10px;
+	}
+
+	.globalContainer .left-sidebar {
+		float: left;
+		height: 100%;
+		width: 15%;
+	}
+
+	.globalContainer #content {
+		float: left;
+		height: 100%;
+		width: 55%;
+	}
+
+	.globalContainer #right-banner {
+		float: left;
+		height: 100%;
+		width: 30%;
+	}
+
+	.left-sidebar #listStyle {
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	#listAppearance {
+		list-style-type: none;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 20px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		color: #404040;
+	}
+
+	#ownerInfo {
+		height: 30px;
+		width: 95%;
+	}
+
+	#ownerPhoto {
+		float: left;
+		height: 100%;		
+		border-radius: 3px;
+	}
+
+	#ownerText {
+		float: left;
+		height: 15px;
+		padding-left: 5px;
+	}
+
+	#ownerName {
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 800;
+		line-height: 20px;
+		height: 50%;
+	}
+
+	#editProfile {
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		height: 50%;
+		margin-top: 5px;
+	}
+
+	.globalContainer .left-sidebar #topMenu {
+		height: 90px;
+		width: 90%;
+		margin-top: 20px;
+	}
+
+	#topMenu #newsfeed {
+		height: 25%;
+	}
+
+	#newsfeedIcon {
+		float: left;
+		vertical-align: middle;
+		text-align: center;
+		width: 16px;
+	}
+
+	#newsfeedText {
+		float: left;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+		vertical-align: middle;
+	}
+
+	#newsfeedArrow {
+		float: right;
+	}
+
+	#topMenu #message {
+		height: 25%;
+	}
+
+	#messageIcon {
+		float: left;
+		vertical-align: middle;
+		text-align: center;
+		width: 16px;
+	}
+
+	#messageText {
+		float: left;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+		vertical-align: middle;
+	}
+
+	#messageCount {
+		float: right;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+	}
+
+	#topMenu #event {
+		height: 25%;
+	}
+
+	#eventIcon {
+		float: left;
+		vertical-align: middle;
+		text-align: center;
+		width: 16px;
+	}
+
+	#eventText {
+		float: left;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+		vertical-align: middle;
+	}
+
+	#eventCount {
+		float: right;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+	}
+
+	#topMenu #saved {
+		height: 25%;
+	}
+
+	#savedIcon {
+		float: left;
+		vertical-align: middle;
+		text-align: center;
+		width: 16px;
+	}
+
+	#savedText {
+		float: left;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+		vertical-align: middle;
+	}
+
+	#savedCount {
+		float: right;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+	}
+
+	.globalContainer .left-sidebar #group {
+		height: 100px;
+		width: 90%;
+		margin-top: 25px;
+	}
+
+	#group #groupHeader {
+		height: 20%;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 900;
+		color: #999999;
+		text-align: left;
+	}
+
+	#group #group1 {
+		height: 20%;
+		width: 100%;
+	}
+
+	#group1Icon {
+		float: left;
+		vertical-align: middle;
+		text-align: center;
+		width: 16px;
+	}
+
+	#group1Text {
+		float: left;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+		vertical-align: middle;
+	}
+
+	#group1Count {
+		float: right;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+	}
+
+	#group #group2 {
+		height: 20%;
+	}
+
+	#group2Icon {
+		float: left;
+		vertical-align: middle;
+		text-align: center;
+		width: 16px;
+	}
+
+	#group2Text {
+		float: left;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+		vertical-align: middle;
+	}
+
+	#group2Count {
+		float: right;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+	}
+
+	#group #group3 {
+		height: 20%;
+	}
+
+	#group3Icon {
+		float: left;
+		vertical-align: middle;
+		text-align: center;
+		width: 16px;
+	}
+
+	#group3Text {
+		float: left;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+		vertical-align: middle;
+	}
+
+	#group3Count {
+		float: right;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+	}
+
+	#group #group4 {
+		height: 20%;
+	}
+
+	#group4Icon {
+		float: left;
+		vertical-align: middle;
+		text-align: center;
+		width: 16px;
+	}
+
+	#group4Text {
+		float: left;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+		vertical-align: middle;
+	}
+
+	#group4Count {
+		float: right;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+	}
+
+	.globalContainer .left-sidebar #app {
+		height: 60px;
+		width: 90%;
+		margin-top: 30px;
+
+	}
+
+	#app #appHeader {
+		height: 33.3333333%;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 900;
+		color: #999999;
+		text-align: left;
+	}
+
+	#app #app1 {
+		height: 33.333333%;
+		width: 100%;
+	}
+
+	#app1Icon {
+		float: left;
+		vertical-align: middle;
+		text-align: center;
+		width: 16px;
+	}
+
+	#app1Text {
+		float: left;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+		vertical-align: middle;
+	}
+
+	#app1Count {
+		float: right;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+	}
+
+	#app #app2 {
+		height: 33.3333333%;
+	}
+
+	#app2Icon {
+		float: left;
+		vertical-align: middle;
+		text-align: center;
+		width: 16px;
+	}
+
+	#app2Text {
+		float: left;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+		vertical-align: middle;
+	}
+
+	#app2Count {
+		float: right;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 200;
+		line-height: 20px;
+		margin-left: 7px;
+	}
+
+	#content {
+		margin-top: 0px;
+	}
+
+	#first {
+		height: 120px;
+		width: 95%;
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+	}
+
+	#postBox {
+		height: 280px;
+		width: 95%;
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+		margin-top: 15px;
+		
+	}
+
+	.postBoxCount {
+		width: 95%;
+		margin-top: 215px;
+		margin-left: 8px;
+		line-height: 16px;
+		font-weight: 500;
+		border-bottom: 1px solid rgb (229, 229, 229);
+		color: #C0C0C0;
+		
+	}
+
+	.commentCountText {
+		margin-left: 15px;
+	}
+
+	.shareCountText {
+		margin-left: 15px;
+	}
+
+	.postBoxDivider {
+		color: white;
+		background-color: white;
+		width: 97%;
+		margin-left: 5px;
+		height: 1px;
+	}
+
+	.postBoxButtons {
+		width: 95%;
+		margin-top: 10px;
+		margin-left: 8px;
+		padding-bottom: 8px;
+		line-height: 16px;
+		color: #C0C0C0;
+		font-weight: lighter;
+	}
+
+	.commentButton {
+		margin-left: 18px;
+	}
+
+	.shareButton {
+		margin-left: 18px;
+	}
+
+	#third {
+		height: 200px;
+		width: 95%;
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+		margin-top: 15px;
+	}
+
+	#right-banner {
+		margin-top: 0px;
+	}
+
+	#right-banner #firstBanner {
+		height: 500px;
+		width: 95%;
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+	}
+
+	#right-banner #secondBanner {
+		height: 200px;
+		width: 95%;
+		background-color: white;
+		border-top: #e5e6e9;
+		border-bottom: #d0d1d5;
+		border-left: #dfe0e4;
+		border-right: #dfe0e4;
+		border-radius: 3px;
+		border-bottom-width: thin;
+		border-bottom-style: solid;
+		border-right-width: thin;
+		border-right-style: solid;
+		border-left-width: thin;
+		border-left-style: solid;
+		border-top-width: thin;
+		border-top-style: solid;
+		margin-top: 15px;
+	}
+
+	#test {
+		font-color: black;
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<table class="main-header" title="main-header">
+			<tbody class="headerLogoContainer">
+				<tr>
+					<th>
+						<a id="headerLogo" href="http://s288.photobucket.com/user/superunicorn1/media/fb_white_logo_slice2_zps5fdr5ads.png.html" target="_blank"><img src="http://i288.photobucket.com/albums/ll199/superunicorn1/fb_white_logo_slice2_zps5fdr5ads.png" border="0" alt="fb_logo_white_slice2 photo fb_white_logo_slice2_zps5fdr5ads.png" height="5%" width="5%"></a>	
+					</th>
+				</tr>
+			</tbody>
+		</table>
+		<form id="search">
+			<input id="searchBox" type="text" name="textSearch" id="textSearch" placeholder="Search Facebook">
+			<input id="searchSubmitButton" type="submit" name="submitSearch" value="Search">
+		</form>
+	</header>
+	<main>
+		<div class="mainPage">
+			<div class="globalContainer">
+				<section class="left-sidebar">
+					<div id="ownerInfo">
+					  <img id="ownerPhoto" src="http://i288.photobucket.com/albums/ll199/superunicorn1/fb_profile_image_zps31pnjqhg.jpg"/>
+					  <div id="ownerText">
+					    <div id="ownerName">김성한</div>
+					    <div id="editProfile">Edit Profile</div>
+					  </div>		
+					</div>
+					<div id="topMenu">
+						<div id="newsfeed">
+							<div id="newsfeedIcon"> 
+								<i class="fa fa-newspaper-o"></i>
+							</div>
+							<div id="newsfeedText">
+								Newsfeed
+							</div>
+							<div id="newsfeedArrow">
+								<i class="fa fa-caret-down"></i>
+							</div>
+						</div>
+						<div id="message">
+							<div id="messageIcon"> 
+								<i class="fa fa-envelope-o"></i>
+							</div>
+							<div id="messageText">
+								Messages
+							</div>
+							<div id="messageCount">
+								20+
+							</div>
+						</div>
+						<div id="event">
+							<div id="eventIcon"> 
+								<i class="fa fa-calendar"></i>
+							</div>
+							<div id="eventText">
+								Events
+							</div>
+							<div id="eventCount">
+								2
+							</div>
+						</div>
+						<div id="saved">
+							<div id="savedIcon"> 
+								<i class="fa fa-bookmark-o"></i>
+							</div>
+							<div id="savedText">
+								Saved
+							</div>
+							<div id="savedCount">
+								3
+							</div>
+						</div>
+					</div>
+					<div id="group">
+						<p id="groupHeader">GROUPS</p>
+						<div id="group1">
+							<div id="group1Icon"> 
+								<i class="fa fa-university"></i>
+							</div>
+							<div id="group1Text">
+								NA우리NEXT
+							</div>
+							<div id="group1Count">
+								2
+							</div>
+						</div>
+						<div id="group2">
+							<div id="group2Icon"> 
+								<i class="fa fa-futbol-o"></i>
+							</div>
+							<div id="group2Text">
+								축구 동호회
+							</div>
+							<div id="group2Count">
+			
+							</div>
+						</div>
+						<div id="group3">
+							<div id="group3Icon"> 
+								<i class="fa fa-coffee"></i>
+							</div>
+							<div id="group3Text">
+								Coffee Lovers
+							</div>
+							<div id="group3Count">
+								5
+							</div>
+						</div>
+						<div id="group4">
+							<div id="group4Icon"> 
+								<i class="fa fa-lightbulb-o"></i>
+							</div>
+							<div id="group4Text">
+								Startup Ideas
+							</div>
+							<div id="group4Count">
+								1
+							</div>
+						</div>
+					</div>
+					<div id="app">
+						<p id="appHeader">APPS</p>
+						<div id="app1">
+							<div id="app1Icon"> 
+								<i class="fa fa-gamepad"></i>
+							</div>
+							<div id="app1Text">
+								Games
+							</div>
+							<div id="app1Count">
+								2
+							</div>
+						</div>
+						<div id="app2">
+							<div id="app2Icon"> 
+								<i class="fa fa-refresh"></i>
+							</div>
+							<div id="app2Text">
+								On this day
+							</div>
+							<div id="app2Count">
+								1
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="content">
+					<div id="postBox">
+						<!--
+						<p class="postBoxAuthor">
+							SH Kim
+						</p>
+						<p class="postBoxText">
+							Certes sol hordes globes ame raison. Au pentes je bourse me durcis la espace. 
+						</p>
+						<div class="postBoxContent">
+							<img id="postBoxImg" src="http://lorempixel.com/300/200"></img>
+						</div>
+						-->
+						<div class="postBoxCount">
+							<a>
+								<div id="test"></div>
+								<span>
+									<span id="likeCount" class="likeCount" input class="clickCount" size="3" onfocus="this.blur();" value="0">
+									</span>
+									<!--<span class="likeCount" data-bind = 'text: numberOfClicks'>&nbsp;</span>-->
+									 Likes
+									 <!--<a id = "likeClicks">0</a> -->
+									 <!--<input class="likeCount" value = "0" /> -->
+								</span>
+								<span class="commentCountText">
+									<span id = "button-count" class="commentCount" input class="clickCount" size="3" onfocus="this.blur();" value="0"></span>
+									 Comments
+								</span>
+								<span class="shareCountText">
+									<span id="button-count" class="shareCount" input class="clickCount" size="3" onfocus="this.blur();" value="0"></span>
+									 Shares
+								</span>
+							</a>
+						</div>
+						<hr class="postBoxDivider">
+
+						</hr>
+						<div class="postBoxButtons">
+							<span class="likeButton">
+								<a class="likeButton1">
+									<button id = "likeButton" class="fa fa-thumbs-up" data-bind="click: registerClick, disable: hasClickedTooManyTimes">
+									</button>
+									<span class="likeButtonText">
+										Like
+									</span>
+								</a>
+							</span>
+							<span class="commentButton">
+								<a class="commentButton1">
+									<button id = "commentButton" class="fa fa-comment" data-bind="click: registerClick, disable: hasClickedTooManyTimes"></i>
+									</button>
+									<span class="commentButtonText">
+										Reply
+									</span>
+								</a>
+							</span>
+							<span class="shareButton">
+								<a class="shareButton1">
+									<button id = "shareButton" class="fa fa-share" data-bind="click: registerClick, disable: hasClickedTooManyTimes"></i>
+									</button>
+									<span class="shareButtonText">
+										Share
+									</span>
+								</a>
+							</span>	
+						</div>			
+					</div>
+					<div id="postBox">
+					</div>
+					<div id="postBox">
+					</div>
+				</section>
+				<section id="right-banner">
+					<div id="firstBanner">
+					</div>
+					<div id="secondBanner">
+					</div>
+						
+			</div>
+		</div>
+	</main>
+	<script type="text/javascript">
+
+
+	document.addEventListener("scroll", function (event)
+	{
+		checkForNewDiv();
+	});
+
+	var checkForNewDiv = function() 
+	{
+		var lastDiv = document.querySelector("#content > div:last-child");
+		var lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight;
+		var pageOffset = window.pageYOffset + window.innerHeight;
+
+		if(pageOffset > lastDivOffset - 10)
+		{
+			var newDiv = document.createElement("div");
+			
+
+			newDiv.innerHTML = "<div style='height: 280px;width: 95%;background-color: white;border-top: #e5e6e9;border-bottom: #d0d1d5;border-left: #dfe0e4;border-right: #dfe0e4;border-radius: 3px;border-bottom-width: thin;border-bottom-style: solid;border-right-width: thin;border-right-style: solid;border-left-width: thin;border-left-style: solid;border-top-width: thin;border-top-style: solid;margin-top: 15px;' id=postBox2>";
+			document.getElementById("content").appendChild(newDiv);
+			checkForNewDiv();
+		}
+	};
+
+/*
+	var like = 0;
+	var comment = 0;
+	var share = 0;
+
+	var post = document.getElementsByClassName("postBox");
+
+	var likeCount = document.querySelector(".likeCount");
+	var commentCount = document.querySelector(".commentCount");
+	var shareCount = document.querySelector(".shareCount");
+
+	var clickCount = function(e)
+	{
+		var span = e.target.closest("span");
+		if (span.className == "likeButton" || span.className "likeButton likeCount") {
+			var likeCount = this.querySelector(".likeCount");
+			likeCount.innerHTML = (++like) + "likes";
+			span.classList.toggle("likeCount");
+			span.classElementChild.classList.toggle("likeButton");
+		}
+		else if(span.className == "commentButton" || span.className == "commentButton commentCount") {
+			var commentCount = this.querySelector(".commentCount");
+			replyCounts.innerHTML = (++comment) + " comments";
+			span.classList.toggle("commentCount");
+		}
+		else {
+			var shareCount = this.querySelector(".shareCount");
+			shareCount.innerHTML = (++share) + " shares";
+			span.classList.toggle("shareCount");
+		}
+	};
+
+	for (var i = 0; i<post.length; i++) {
+		post[i].addEventListener("click", clickCount, false);
+	};
+*/
+
+/*
+	var likeClicks = 0;
+	function likeClickCount() {
+		likeClicks += 1;
+		document.getElementsById("likeClicks").innerHTML = likeClicks;
+	};
+*/
+
+/*
+	document.addEventListener("click", function(e) {
+		if (e.target.classList.contains("likeButton")){
+			var div = e.target.closest("div");
+			var clickCount = div.querySelector(".clickCount");
+			var num = parseInt(clickCount.innerHTML) || 0;
+
+			if (e.target.classList.contains("likeCount")){
+				clickCount.innerHTML = num-1;
+			}
+			else {
+				clickCount.innerHTML = num+1;
+			}
+
+			e.target.classList.toggle("likeCount");
+		}
+	});
+
+*/
+/*
+	document.getElementById("test").addEventListener("click", function( e )
+	{
+		e.target.innerHTML = "click count: " + e.detail;
+	}, false);
+*/
+
+/*
+	function modify_qty(val) {
+		var qty = document.getElementsByClassName(".likeCount").value;
+		var new_qty = parseInt(qty,10) + val;
+
+		if (new_qty < 0) {
+			new_qty = 0;
+		}
+
+		document.getElementsByClassName(".likeCount").value = new_qty;
+
+		return new_qty;
+	}
+*/
+/*
+	var ClickCounterViewModel = function() {
+		this.numberOfClicks = ko.observable(0);
+
+		this.registerClick = function() {
+			this.numberOfClicks(this.numberOfClicks() + 1);
+		};
+	};
+
+	ko.applyBindings(new ClickCounterViewModel());
+*/
+
+/*
+
+	var clicks = 0;
+	function linkClick() {
+		document.getElementsByClassName('clickCount').value = ++clicks;
+	}
+
+	document.write('<a href="#" onlick="linkClick()">Click Me!</a>');
+*/
+
+	var likeButton = document.getElementById("likeButton");
+
+	var likeCounter = document.getElementById("likeCount");
+
+	likeCounter.innerHTML = 0;
+
+	likeButton.onclick = function()
+	{
+		likeCounter.innerHTML++;
+	}
+
+	var commentButton = document.getElementById("commentButton");
+
+	var commentCounter = document.getElementById("commentCount");
+
+	commentCounter.innerHTML = 0;
+
+	commentButton.onclick = function()
+	{
+		commentCounter.innerHTML++;
+	}
+	</script>
+</body>
+</html>
